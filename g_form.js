@@ -1,4 +1,4 @@
-var scope, g_form;
+let g_form;
 $.find("input").every(el => {
     if (g_form) {
         console.log('g_form already exists');
@@ -6,7 +6,7 @@ $.find("input").every(el => {
     }
     try {
         console.log('Trying to select element id "' + el.id + '"');
-        scope = angular.element($('#' + el.id)).scope();
+        let scope = angular.element($('#' + el.id)).scope();
         g_form = scope.$parent.$parent.$parent.getGlideForm();
     } catch (e) {}
     if (g_form) {
